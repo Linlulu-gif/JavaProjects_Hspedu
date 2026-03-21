@@ -29,7 +29,8 @@ public class SmallChangeSystem {
         double balance = 0;//余额
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");//HH:mm:ss
         // 使用24小时制，避免12小时制混淆
-
+        // 4. 改善退出
+        String if_exit = "n";//默认不退出
         do {
             System.out.println("\n********************零钱通菜单************************");
             System.out.println("\t\t\t\t1 零钱通明细\t\t\t\t");
@@ -71,8 +72,30 @@ public class SmallChangeSystem {
                     System.out.println("消费成功（>_<)");
                     break;
                 case "4":
-                    System.out.println("********************退出 系统************************");
-                    flag = false;
+                    //这些是我自己写的。。。 逻辑比较混乱
+//                    while(true){
+//                        System.out.println("你确定退出吗？y/n");
+//                        if_exit = scanner.next();
+//                        if("y".equals(if_exit)){
+//                            System.out.println("********************退出 系统************************");
+//                            flag = false;
+//                            break;
+//                        } else if("n".equals(if_exit)){
+//                            break;
+//                        }
+//                    }
+                    while(true){
+                        //实现判断用户输入的到底是不是y/n
+                        System.out.println("你确定要退出吗？y/n");
+                        if_exit = scanner.next();
+                        if("y".equals(if_exit) || "n".equals(if_exit)){
+                            break;
+                        }
+                    }
+                    if("y".equals(if_exit)){
+                        flag = false;
+                        System.out.println("********************退出 系统************************");
+                    }
                     break;
                 default:
                     System.out.println("选择有误，请重新选择！！！");
