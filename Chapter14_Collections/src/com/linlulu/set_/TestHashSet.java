@@ -1,5 +1,7 @@
 package com.linlulu.set_;
 
+import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -26,6 +28,10 @@ public class TestHashSet {
         hashSet.add(employee3);
         System.out.println(hashSet);
         //[{name=张三 age=19}, {name=张三 age=29}]
+    }
+    @Test
+    public void sum(){
+
     }
 }
 
